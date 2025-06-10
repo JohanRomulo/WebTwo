@@ -1,0 +1,96 @@
+body {
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+}
+
+.calculadora {
+  background: #222831;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  padding: 32px 24px 24px 24px;
+  width: 340px;
+  transition: box-shadow 0.3s;
+}
+
+.calculadora:hover {
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+}
+
+.pantalla {
+  margin-bottom: 24px;
+}
+
+#display {
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 12px;
+  background: #393e46;
+  color: #fff;
+  font-size: 2rem;
+  text-align: right;
+  padding: 0 16px;
+  box-sizing: border-box;
+  outline: none;
+  letter-spacing: 2px;
+}
+
+.teclado .fila {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.teclado button {
+  flex: 1 1 0;
+  margin: 0 6px;
+  padding: 18px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #00adb5 0%, #00fff5 100%);
+  color: #222831;
+  box-shadow: 0 2px 8px rgba(0, 173, 181, 0.15);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+
+.teclado button:last-child {
+  margin-right: 0;
+}
+
+.teclado button:active {
+  background: linear-gradient(135deg, #00fff5 0%, #00adb5 100%);
+  color: #fff;
+  transform: scale(0.97);
+}
+
+.teclado button:nth-child(4),
+.teclado button:nth-child(3):nth-last-child(2) {
+  background: linear-gradient(135deg, #ff5722 0%, #ff9800 100%);
+  color: #fff;
+}
+
+.teclado button:nth-child(4):active,
+.teclado button:nth-child(3):nth-last-child(2):active {
+  background: linear-gradient(135deg, #ff9800 0%, #ff5722 100%);
+}
+
+.teclado button:focus {
+  outline: 2px solid #00adb5;
+}
+
+.teclado .fila:last-child button {
+  background: linear-gradient(135deg, #e53935 0%, #e35d5b 100%);
+  color: #fff;
+}
+
+.teclado .fila:last-child button:active {
+  background: linear-gradient(135deg, #e35d5b 0%, #e53935 100%);
+}
