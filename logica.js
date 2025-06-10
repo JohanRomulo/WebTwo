@@ -1,23 +1,27 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const display = document.getElementById("display");
+document.addEventListener("DOMContentLoaded", () => {
+    const display = document.querySelector("#display");
     const botones = document.querySelectorAll("button");
 
-    botones.forEach(boton => {
-        boton.addEventListener("click", () => {
-            const valor = boton.textContent;
+    botones.forEach((boton) => {
+        boton.addEventListener("click", manejarClick);
+    });
 
-            if (valor === "C") {
+    function manejarClick(evento) {
+        const valor = evento.target.textContent;
+
+        switch (valor) {
+            case "C":
                 display.value = "";
-            } else if (valor === "=") {
+                break;
+            case "=":
                 try {
                     display.value = eval(display.value);
-                } catch {
+                } catch (e) {
                     display.value = "Error";
                 }
-            } else {
+                break;
+            default:
                 display.value += valor;
-            }
-        });
-    });
+        }
+    }
 });
-
